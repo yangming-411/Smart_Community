@@ -1,0 +1,170 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='community_base'>
+    <pose>-0.009983 0.008771 0 0 -0 0</pose>
+
+    <!--west_wall-->
+    <link name='Wall_10'>
+      <collision name='Wall_10_Collision'>
+        <geometry>
+          <box>
+            <size>5.5 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='Wall_10_Visual'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>5.5 0.15 2.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+          <ambient>1 1 1 1</ambient>
+        </material>
+        <meta>
+          <layer>0</layer>
+        </meta>
+      </visual>
+      <pose>-2.675 0 0 0 -0 1.5708</pose>
+    </link>
+
+    <!--north_wall-->
+    <link name='Wall_7'>
+      <collision name='Wall_7_Collision'>
+        <geometry>
+          <box>
+            <size>5.5 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='Wall_7_Visual'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>5.5 0.15 2.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+          <ambient>1 1 1 1</ambient>
+        </material>
+        <meta>
+          <layer>0</layer>
+        </meta>
+      </visual>
+      <pose>-0 2.675 0 0 -0 0</pose>
+    </link>
+
+    <!--east_wall-->
+    <link name='Wall_8'>
+      <collision name='Wall_8_Collision'>
+        <geometry>
+          <box>
+            <size>5.5 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='Wall_8_Visual'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>5.5 0.15 2.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+          <ambient>1 1 1 1</ambient>
+        </material>
+        <meta>
+          <layer>0</layer>
+        </meta>
+      </visual>
+      <pose>2.675 0 0 0 -0 -1.5708</pose>
+    </link>
+
+    <!--south_wall-->
+    <link name='Wall_9'>
+      <collision name='Wall_9_Collision'>
+        <geometry>
+          <box>
+            <size>5.5 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose>0 0 1.25 0 -0 0</pose>
+      </collision>
+      <visual name='Wall_9_Visual'>
+        <pose>0 0 1.25 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>5.5 0.15 2.5</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Grey</name>
+          </script>
+          <ambient>1 1 1 1</ambient>
+        </material>
+        <meta>
+          <layer>0</layer>
+        </meta>
+      </visual>
+      <pose>-0 -2.675 0 0 -0 3.14159</pose>
+    </link>
+
+    <!--map link-->
+    <!-- 地图地面link -->
+    <link name="link">
+        <!-- 位姿：位置(0,0,0)，姿态(0,0,1.5708=90°) -->
+        <pose>0 0 0 0 0 1.5708</pose>
+        
+        <!-- 碰撞属性：定义物理碰撞边界 -->
+        <collision name="collision">
+            <geometry>
+                <box>
+                    <!--：6m × 6m × 0.1m的薄板 -->
+                    <size>5.5 5.5 0.1</size>
+                </box>
+            </geometry>
+        </collision>
+        
+        <!-- 视觉属性：定义渲染外观 -->
+        <visual name="visual">
+            <geometry>
+                <box>
+                    <size>5.5 5.5 0.1</size>
+                </box>
+            </geometry>
+            <material>
+                <script>
+                    <!-- 材质脚本路径 -->
+                    <uri>model://community_base/materials/scripts</uri>
+                    <!-- 纹理资源路径 -->
+                    <uri>model://community_base/materials/textures</uri>
+                    <!-- 材质名称 -->
+                    <name>Community/Ground</name>
+                </script>
+                <!-- 环境光颜色：浅灰色 -->
+                <ambient>0.8 0.8 0.8 1</ambient>
+            </material>
+        </visual>
+    </link>
+
+    <static>1</static>
+  </model>
+</sdf>

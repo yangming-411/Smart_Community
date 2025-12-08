@@ -1,0 +1,15 @@
+material Community/Ground
+{
+    technique
+    {
+        pass
+        {
+            ambient 0.8 0.8 0.8 1
+            
+            texture_unit
+            {
+                texture map_ground.png
+            }
+        }
+    }
+}
