@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wwww.ros.org/wiki/xacro" >
+    <xacro:include filename="$(find smart_community_sim)/urdf/robot/common_inertia.xacro"/>
+
+    <xacro:macro name="base_xacro" >
+        <link name="base_footprint"/>
+
+        <!--机器人的身体部分-->
+        <link name="base_link">
+            <!--部件的外观描述-->
+            <visual>
+                <!--沿着自己几何中心的偏移和旋转量-->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!--几何形状-->
+                <geometry>
+                    <!-- 定义一个长方体：长(x) 宽(y) 高(z)，单位：米 -->
+                    <box size="0.5 0.4 0.25"/>
+                </geometry>
+                <!--材质颜色-->
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 0.5"/>
+                </material>
+            </visual>
+
+            <collision>
+                <!--沿着自己几何中心的偏移和旋转量-->
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <!--几何形状-->
+                <geometry>
+                    <!-- 定义一个长方体：长(x) 宽(y) 高(z)，单位：米 -->
+                    <box size="0.5 0.4 0.25"/>
+                </geometry>
+                <!--材质颜色-->
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 0.5"/>
+                </material>
+            </collision>
+
+            <!--添加质量与惯性-->
+            <xacro:box_inertia m="3.0" w="0.5" h="0.4" d="0.25"/>
+            
+        </link>
+
+        <joint name="joint_name" type="fixed">
+            <origin xyz="0.0 0.0 0.164" rpy="0.0 0.0 0.0"/>
+            <parent link="base_footprint"/>
+            <child link="base_link"/>
+        </joint>
+
+
+
+
+    </xacro:macro>
+    
+
+</robot>
