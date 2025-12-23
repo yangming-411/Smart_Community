@@ -46,6 +46,12 @@
         <parent link="base_link"/>
         <child link="camera_link"/>
     </joint>
+
+    <!-- 视觉传感器 - 可用较浅色，但不过分抢眼 -->
+    <gazebo reference="camera_link">
+        <material>Gazebo/LightGray</material>  <!-- 或保留为 Gazebo/Gray -->
+    </gazebo>
+    
     </xacro:macro>
 
 </robot>

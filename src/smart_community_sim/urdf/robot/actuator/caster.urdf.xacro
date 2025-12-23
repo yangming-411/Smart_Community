@@ -44,6 +44,19 @@
         <child link="${caster_name}_link"/>
         <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
     </joint>
+    
+    <!-- 移动部件 - 实用之实（亚光黑，功能为本） -->
+    <gazebo reference="${caster_name}_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="${caster_name}_link">
+        <mu1 value="0.0"/>
+        <mu2 value="0.0"/>
+        <kp value="1000000000.0"/>
+        <kd value="1.0"/>
+    </gazebo>
+    
     </xacro:macro>
 
 </robot>

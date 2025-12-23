@@ -45,6 +45,12 @@
         <parent link="base_link"/>
         <child link="imu_link"/>
     </joint>
+
+    <!-- 姿态传感器 - 同视觉传感器 -->
+    <gazebo reference="imu_link">
+        <material>Gazebo/LightGray</material>
+    </gazebo>
+    
     </xacro:macro>
 
 </robot>
