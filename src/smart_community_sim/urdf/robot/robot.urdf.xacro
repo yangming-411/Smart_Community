@@ -10,6 +10,8 @@
 <!--执行器部分-->
 <xacro:include filename="$(find smart_community_sim)/urdf/robot/actuator/wheel.urdf.xacro"/>
 <xacro:include filename="$(find smart_community_sim)/urdf/robot/actuator/caster.urdf.xacro"/>
+<!--插件-->
+<xacro:include filename="$(find smart_community_sim)/urdf/robot/plugins/gazebo_control_plugin.xacro"/>
 
 
 
@@ -22,5 +24,6 @@
 <xacro:wheel_xacro wheel_name="right_wheel" xyz="0.0 -0.12 -0.07"/>
 <xacro:caster_xacro caster_name="front_caster" xyz="0.1 0.0 -0.09"/>
 <xacro:caster_xacro caster_name="back_caster" xyz="-0.1 0.0 -0.09"/>
+<xacro:gazebo_control_plugin />
 
 </robot>
