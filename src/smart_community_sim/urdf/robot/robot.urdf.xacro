@@ -12,6 +12,7 @@
 <xacro:include filename="$(find smart_community_sim)/urdf/robot/actuator/caster.urdf.xacro"/>
 <!--插件-->
 <xacro:include filename="$(find smart_community_sim)/urdf/robot/plugins/gazebo_control_plugin.xacro"/>
+<xacro:include filename="$(find smart_community_sim)/urdf/robot/plugins/gazebo_sensor_plugin.xacro"/>
 
 
 
@@ -25,5 +26,6 @@
 <xacro:caster_xacro caster_name="front_caster" xyz="0.1 0.0 -0.09"/>
 <xacro:caster_xacro caster_name="back_caster" xyz="-0.1 0.0 -0.09"/>
 <xacro:gazebo_control_plugin />
+<xacro:gazebo_sensor_plugin />
 
 </robot>
