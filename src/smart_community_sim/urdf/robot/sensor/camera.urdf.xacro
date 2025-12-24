@@ -40,11 +40,21 @@
         <xacro:box_inertia m="0.1" w="0.02" h="0.10" d="0.02"/>
     </link>
 
+    <!--添加相机虚拟部件，修正位姿-->
+    <link name="camera_optical_link"></link>
+
     <!--机器人的关节，用于组合机器人的部件-->
     <joint name="camera_joint" type="fixed">
         <origin xyz="${xyz}" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="camera_link"/>
+    </joint>
+
+    <!--添加虚拟关节-->
+    <joint name="camera_optical_joint" type="fixed">
+        <parent link="camera_link"/>
+        <child link="camera_optical_link"/>
+        <origin xyz="0 0 0" rpy="${-pi/2} 0.0 ${-pi/2}"/>
     </joint>
 
     <!-- 视觉传感器 - 可用较浅色，但不过分抢眼 -->
