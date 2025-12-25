@@ -32,7 +32,7 @@
       <!-- 设置扫描距离 -->
       <range>
         <min>0.120000</min>
-        <max>0.6</max>
+        <max>6.0</max>
         <resolution>0.015000</resolution>
       </range>
       
