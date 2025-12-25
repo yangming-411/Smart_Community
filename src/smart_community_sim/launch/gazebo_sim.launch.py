@@ -52,8 +52,12 @@ def generate_launch_description():
         cmd='ros2 control load_controller robot_joint_state_broadcaster --set-state active'.split(' '),
         output='screen'
     )
-    action_load_effort_state_controller = launch.actions.ExecuteProcess(
-        cmd='ros2 control load_controller robot_effort_controller --set-state active'.split(' '),
+    # action_load_effort_state_controller = launch.actions.ExecuteProcess(
+    #     cmd='ros2 control load_controller robot_effort_controller --set-state active'.split(' '),
+    #     output='screen'
+    # )
+    action_load_diff_drive_controller = launch.actions.ExecuteProcess(
+        cmd='ros2 control load_controller robot_diff_drive_controller --set-state active'.split(' '),
         output='screen'
     )
     
@@ -71,7 +75,7 @@ def generate_launch_description():
         launch.actions.RegisterEventHandler(
             event_handler=launch.event_handlers.OnProcessExit(
                 target_action=action_load_joint_state_controller,
-                on_exit=[action_load_effort_state_controller],
+                on_exit=[action_load_diff_drive_controller],
             )
         ),
     ])
