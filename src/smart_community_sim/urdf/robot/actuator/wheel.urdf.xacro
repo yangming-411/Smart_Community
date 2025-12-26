@@ -34,7 +34,7 @@
         </collision>
 
         <!--添加质量与惯性-->
-        <xacro:cylinder_inertia m="0.05" r="0.05" h="0.06"/>
+        <xacro:cylinder_inertia m="0.5" r="0.05" h="0.06"/>
     </link>
 
     <!--机器人的关节，用于组合机器人的部件-->

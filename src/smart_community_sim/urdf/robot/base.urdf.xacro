@@ -37,7 +37,7 @@
             </collision>
 
             <!--添加质量与惯性-->
-            <xacro:box_inertia m="3.0" w="0.34" h="0.24" d="0.14"/>
+            <xacro:box_inertia m="2.0" w="0.34" h="0.24" d="0.14"/>
             
         </link>
 
